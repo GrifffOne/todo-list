@@ -55,6 +55,9 @@ h1 {
 	transition: 0.5s;
 	margin: 0.25rem;
 	font-size: 1rem;
+	@media (max-width: 480px) {
+		font-size: 0.7rem;
+	}
 }
 
 .add:hover {
@@ -86,6 +89,9 @@ h1 {
 	color: #000;
 	font-size: 1rem;
 	width: 400px;
+	@media (max-width: 480px) {
+		width: 270px;
+	}
 }
 
 .item_input-active {
