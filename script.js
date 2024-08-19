@@ -2,7 +2,7 @@ const container = document.querySelector('.container')
 const inputValue = document.querySelector('.input')
 const add = document.querySelector('.add')
 
-if (localStorage.getItem('todos') === undefined) {
+if (localStorage.getItem('todos') == undefined) {
 	const todos = []
 	localStorage.setItem('todos', JSON.stringify(todos))
 }
