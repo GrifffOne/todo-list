@@ -2,12 +2,12 @@ const container = document.querySelector('.container')
 const inputValue = document.querySelector('.input')
 const add = document.querySelector('.add')
 
-if (localStorage.getItem('todos') === undefined) {
+if (window.localStorage.getItem('todos') === undefined) {
 	const todos = []
-	localStorage.setItem('todos', JSON.stringify(todos))
+	window.localStorage.setItem('todos', JSON.stringify(todos))
 }
 
-const todosEX = localStorage.getItem('todos')
+const todosEX = window.localStorage.getItem('todos')
 const todos = JSON.parse(todosEX)
 
 class item {
@@ -52,7 +52,7 @@ class item {
 			input.disabled = !input.disabled
 			let indexof = todos.indexOf(name)
 			todos[indexof] = input.value
-			localStorage.setItem('todos', JSON.stringify(todos))
+			window.localStorage.setItem('todos', JSON.stringify(todos))
 			this.newName = input.value
 			console.log(this.newName)
 		}
@@ -64,7 +64,7 @@ class item {
 		let index = todos.indexOf(this.newName)
 		console.log(index)
 		todos.splice(index, 1)
-		localStorage.setItem('todos', JSON.stringify(todos))
+		window.localStorage.setItem('todos', JSON.stringify(todos))
 	}
 }
 
@@ -79,7 +79,7 @@ function check() {
 	if (inputValue.value !== '') {
 		new item(inputValue.value)
 		todos.push(inputValue.value)
-		localStorage.setItem('todos', JSON.stringify(todos))
+		window.localStorage.setItem('todos', JSON.stringify(todos))
 		inputValue.value = ''
 	}
 }
